@@ -1,7 +1,5 @@
 import React from "react";
-import { Button } from "antd";
-import { logout } from "../../services/auth";
 
-const Home = () => <Button onClick={() => logout()}>Logout</Button>;
+const Home = () => <h1>Vários indicadores legais</h1>;
 
 export default Home;
