@@ -14,7 +14,9 @@ const SIGN_IN = gql`
       success
       errors
       user {
-        authenticationToken
+        id
+        firstName
+        role
       }
     }
   }
@@ -22,7 +24,7 @@ const SIGN_IN = gql`
 
 const SignIn = () => {
   const [signIn, { data: dataLogin }] = useMutation(SIGN_IN);
-  const token = _.get(dataLogin, "signIn.user.authenticationToken", null);
+  const user = _.get(dataLogin, "signIn.user", null);
   const errors = _.get(dataLogin, "signIn.errors", []);
   const success = _.get(dataLogin, "signIn.success", null);
   const history = useHistory();
@@ -41,8 +43,8 @@ const SignIn = () => {
     });
 
     if (success) {
-      login(token);
-      history.push("/app");
+      login(user);
+      history.push("/home");
     }
   };
 
