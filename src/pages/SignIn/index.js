@@ -49,61 +49,59 @@ const SignIn = () => {
   };
 
   return (
-    <>
-      <Row justify="space-around" align="middle" style={{ height: "100vh" }}>
-        <Image width={400} src={Logo} />
-        <Col span={6}>
-          {errors.length > 0 && (
-            <Alert
-              message={errors}
-              type="error"
-              style={{ marginBottom: "5px" }}
-            />
-          )}
-          <Form layout="vertical" onFinish={handleSubmit(onSubmit)}>
-            <Form.Item
-              label="Email"
-              name="email"
-              rules={[
-                {
-                  required: true,
-                  message: "E-mail não pode ficar em branco",
-                },
-              ]}
-            >
-              <Controller as={<Input />} control={control} name="email" />
-            </Form.Item>
+    <Row justify="space-around" align="middle" style={{ height: "100vh" }}>
+      <Image width={400} src={Logo} />
+      <Col span={6}>
+        {errors.length > 0 && (
+          <Alert
+            message={errors}
+            type="error"
+            style={{ marginBottom: "5px" }}
+          />
+        )}
+        <Form layout="vertical" onFinish={handleSubmit(onSubmit)}>
+          <Form.Item
+            label="Email"
+            name="email"
+            rules={[
+              {
+                required: true,
+                message: "E-mail não pode ficar em branco",
+              },
+            ]}
+          >
+            <Controller as={<Input />} control={control} name="email" />
+          </Form.Item>
 
-            <Form.Item
-              label="Senha"
+          <Form.Item
+            label="Senha"
+            name="password"
+            rules={[
+              {
+                required: true,
+                message: "Senha não pode ficar em branco",
+              },
+            ]}
+          >
+            <Controller
+              as={<Input.Password />}
+              control={control}
               name="password"
-              rules={[
-                {
-                  required: true,
-                  message: "Senha não pode ficar em branco",
-                },
-              ]}
-            >
-              <Controller
-                as={<Input.Password />}
-                control={control}
-                name="password"
-              />
-            </Form.Item>
+            />
+          </Form.Item>
 
-            <Form.Item>
-              <Button
-                type="primary"
-                htmlType="submit"
-                onClick={handleSubmit(onSubmit)}
-              >
-                Entrar
-              </Button>
-            </Form.Item>
-          </Form>
-        </Col>
-      </Row>
-    </>
+          <Form.Item>
+            <Button
+              type="primary"
+              htmlType="submit"
+              onClick={handleSubmit(onSubmit)}
+            >
+              Entrar
+            </Button>
+          </Form.Item>
+        </Form>
+      </Col>
+    </Row>
   );
 };
 
