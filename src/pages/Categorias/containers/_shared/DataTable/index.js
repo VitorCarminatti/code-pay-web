@@ -7,12 +7,10 @@ import _ from "lodash";
 import { formatDateTime } from "../../../../../services/formatDateTime";
 
 const DESTROY_CATEGORIA = gql`
-  mutation DestroyCategoria($id: ID!) {
-    destroyCategotia(input: { id: $id }) {
-      ok
-      errors {
-        messages
-      }
+  mutation destroyCategoria($id: ID!) {
+    destroyCategoria(input: { id: $id }) {
+      success
+      errors
     }
   }
 `;
@@ -89,7 +87,7 @@ export const DataTable = () => {
               </Tooltip>
               <Divider type="vertical" />
               <Tooltip placement="top" title="Editar">
-                <Link to={`catagorias/${record.id}/edit`}>
+                <Link to={`categorias/${record.id}/edit`}>
                   <EditTwoTone />
                 </Link>
               </Tooltip>
