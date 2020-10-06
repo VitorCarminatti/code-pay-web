@@ -1,5 +1,10 @@
 import React from "react";
+import Layout from "../../layout";
 
-const Home = () => <h1>Continuação do site</h1>;
+const Home = () => (
+  <Layout>
+    <h1>Continuação do site</h1>
+  </Layout>
+);
 
 export default Home;

@@ -1,5 +1,11 @@
 import React from "react";
+import Layout from "../../layout";
+import Index from "./containers/Index";
 
-const Produtos = () => <h1>PRODUTOS</h1>;
+const Produtos = () => (
+  <Layout>
+    <Index />
+  </Layout>
+);
 
 export default Produtos;
