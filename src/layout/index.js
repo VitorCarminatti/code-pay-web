@@ -42,10 +42,16 @@ const Layout = ({ children }) => {
         <StyledImage src={Logo} />
         <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
           <Menu.Item key="1" icon={<ClusterOutlined />}>
+            <Link to="/home">Home</Link>
+          </Menu.Item>
+          <Menu.Item key="2" icon={<ClusterOutlined />}>
             <Link to="/categorias">Categorias</Link>
           </Menu.Item>
-          <Menu.Item key="2" icon={<ShoppingOutlined />}>
+          <Menu.Item key="3" icon={<ShoppingOutlined />}>
             <Link to="/produtos">Produtos</Link>
+          </Menu.Item>
+          <Menu.Item key="4" icon={<ShoppingOutlined />}>
+            <Link to="/usuarios">Usuários</Link>
           </Menu.Item>
         </Menu>
       </Sider>
