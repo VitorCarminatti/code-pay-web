@@ -10,6 +10,7 @@ import {
   StyledFooter,
   StyledContent,
   StyledAvatar,
+  StyledDiv,
 } from "./styles";
 import {
   ClusterOutlined,
@@ -57,11 +58,14 @@ const Layout = ({ children }) => {
       </Sider>
       <StyledLayout>
         <StyledHeader>
-          <StyledAvatar
-            onClick={() => setVisible(true)}
-            size="large"
-            icon={<UserOutlined />}
-          />
+          <StyledDiv>
+            <p>Bem-vindo Vitor</p>
+            <StyledAvatar
+              onClick={() => setVisible(true)}
+              size="large"
+              icon={<UserOutlined />}
+            />
+          </StyledDiv>
         </StyledHeader>
         <Modal
           okText="Logout"

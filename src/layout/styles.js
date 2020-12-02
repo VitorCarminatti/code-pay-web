@@ -33,3 +33,9 @@ export const StyledContent = styled(Content)`
 export const StyledAvatar = styled(Avatar)`
   margin: 10px;
 `;
+
+export const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;

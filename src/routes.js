@@ -14,6 +14,10 @@ import NewProduto from "./pages/Produtos/containers/New";
 import EditProduto from "./pages/Produtos/containers/Edit";
 import ShowProduto from "./pages/Produtos/containers/Show";
 
+import Users from "./pages/Users";
+import ShowUsuario from "./pages/Users/containers/Show";
+import EditUsuario from "./pages/Users/containers/Edit";
+
 const Routes = () => {
   return (
     <BrowserRouter>
@@ -28,6 +32,9 @@ const Routes = () => {
         <PrivateRoute path="/produtos/new" component={NewProduto} />
         <PrivateRoute path="/produtos/:id/edit" component={EditProduto} />
         <PrivateRoute path="/produtos/:id" component={ShowProduto} />
+        <PrivateRoute exact path="/usuarios" component={Users} />
+        <PrivateRoute path="/usuarios/:token/edit" component={EditUsuario} />
+        <PrivateRoute path="/usuarios/:token" component={ShowUsuario} />
       </Switch>
     </BrowserRouter>
   );
